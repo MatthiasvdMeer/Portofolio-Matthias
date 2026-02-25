@@ -1,71 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mijn PortfolioWebsite</title>
-    <link rel="stylesheet" href="style.scss">
-    
+  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portfolio Website van Matthias van der Meer. Wil je wat over mij weten? dan bent u op het goede Webadress :)." />
+
+  <title>Mijn PortfolioWebsite</title>
+  <link rel="canonical" href="https://st1738846635.splsites.nl" />
+  <link rel="stylesheet" href="Scss/style.css" />
 </head>
+
 <body>
-    <nav id="nav">
-        <section class="profile-container">
-            <img src="img/IMG-20240801-WA0255.jpg" alt="Profiel">
-            <span>Matthias van der Meer</span>
-        </section>
-        <section class="dropdown-toggle" onclick="toggleDropdown()">Menu</section>
-        <ul>
-            <article>
-            <li><a href="#projects">Projecten</a></li>
-            </article>
-            <article>
-            <li><a href="#extra">Extra</a></li>
-            </article>
-            <article>
-            <li><a href="#contact">Contact</a></li>
-            </article>
-        </ul>
-    </nav>
+  <nav id="nav">
+    <section class="profile-container">
+      <img src="img/IMG-20240801-WA0255.webp" alt="Profiel" />
+      <h1>Matthias van der Meer</h1>
+    </section>
 
-    <header id="header">
-        <section class="over-mij" id="overmij">
-            <h2>Over Mij</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-        </section>
-    </header>
+    <!-- Mobiele dropdown-toggle knop -->
+    <section class="dropdown-toggle" onclick="toggleDropdown()">Menu</section>
 
-<main>
+    <!-- Menu lijst -->
+    <ul id="nav-list">
+      <li><a href="#projects">Projecten</a></li>
+      <li><a href="#extra">Opleiding/werkervaring</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header id="header">
+    <section class="over-mij" id="overmij">
+      <h2>Over Mij</h2>
+      <p>Hallo, ik ben Matthias, ik ben 18 jaar en zit momenteel op het Techniek College Rotterdam waar ik de opleiding Software Developer volg. Hier een paar dingen over mijzelf:
+        Ik leer snel en geniet ervan om mezelf uit te dagen. Tijdens mijn projecten haal ik niet alleen het beste uit mezelf, maar voeg ik ook graag extra elementen toe om ze net dat beetje beter en creatiever te maken. Of het nu gaat om functionaliteit, design of details — ik ga altijd een stapje verder.</p>
+    </section>
+  </header>
+
+  <main>
     <section class="projecten">
+      
+      <section class="projects" id="projects">
         <h2>Mijn Projecten</h2>
-        <section class="projects" id="projects">
-            <a href="#"><img src="img/istockphoto-1324356458-612x612.jpg" alt="Project 1"></a>
-            <a href="#"><img src="img/istockphoto-1324356458-612x612.jpg" alt="Project 2"></a>
-            <a href="#"><img src="img/istockphoto-1324356458-612x612.jpg" alt="Project 3"></a>
-        </section>
+        <a class="project-file" href="files/Deadfunmerchwebshop.zip" download>
+          Download TheDeadTrio <br />Webshop assignment
+        </a>
+        <a class="project-file" href="files/project-escape-room-main.zip" download>
+          Download EscapeRoom <br />Duo Assignment
+        </a>
+      </section>
     </section>
 
     <section class="extra" id="extra">
-        <h2>Extra Items</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-    </section>
+      <br>
+  <h2>Opleiding</h2>
+      
+      <br>
+      <p>Opleiding: TCR Software developer</p>
+      <p>Talen: HTML, CSS, JavaScript, PHP en mysql.</p>
+      <br><br>
+      <h3>Werkervaring:</h3>
+       
+        <br>
+        Action Akkerhof: 1 jaar 2022 - 2023
+        <br>
+        <br>
+        Jumbo Groenewoud:  6 maanden 2023 - 2024
+        <br>
+        <br>
+        Jumbo Struytse hoeck: 6 maanden 2024 - heden
+      </p>
+</section>
 
     <section class="contact" id="contact">
-        <h2>Contact</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+      <h2>Contact</h2>
+      <br>
+      <br>
+      <p>
+        Telefoon: 0639671881
+        <br>
+        Email: 07matthie@gmail.com
+        <br>
+        <br>
+        LinkedIn: <a href="https://www.linkedin.com/in/testlink-4b0b2a1b6/" target="_blank">testlink</a>
+        <br>
+        Github: <a href="https://github.com/MatthiasvdMeer" target="_blank">Profile of Matthias</a>
+        <br>
+      </p>
     </section>
-</main>
+  </main>
 
-    <footer>
-        <a href="#nav">Back to top</a>
-    </footer>
+  <footer>
+    <a href="#nav">Back to top</a>
+  </footer>
 
-    <script>
-        function toggleDropdown() {
-            const navUl = document.querySelector('nav ul');
-            const toggleButton = document.querySelector('.dropdown-toggle');
-            navUl.classList.toggle('show');
-            toggleButton.classList.toggle('active');
-        }
-    </script>
+<script src="js/Functions.js"></script>
 </body>
 </html>

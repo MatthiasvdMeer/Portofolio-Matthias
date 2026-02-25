@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /files/
+Disallow: /js/
+Disallow: /Scss/
+Allow: /
+
+Sitemap: https://st1738846635.splsites.nl/sitemap.xml

@@ -1,0 +1,60 @@
+@mixin all {
+
+/*
+      ==========================================================================
+                                      --NAV--
+      ==========================================================================
+*/
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: teal;
+  padding: 15px;
+  position: relative; 
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+  margin: 0; 
+}
+
+nav ul li a {
+  text-decoration: none;
+  background: lightgray;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: black;
+}
+
+nav a {
+  margin-right: 50px;
+}
+
+/*
+      ==========================================================================
+                                    --FOOTER--
+      ==========================================================================
+*/
+
+footer {
+  text-align: center;
+  background: teal;
+  color: white;
+  padding: 15px;
+  font-size: 1.2em;
+  margin-top: 350px;
+}
+
+footer a {
+  text-decoration: none;
+  background: lightgray;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: black;
+}
+}

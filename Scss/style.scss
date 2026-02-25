@@ -1,0 +1,375 @@
+@use 'Standard';
+
+/*
+      ==========================================================================
+                                  --MAIN CSS--
+      ==========================================================================
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 25px;
+ 
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url("../img/IMG-20240801-WA0391.webp");
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+/*
+      ==========================================================================
+                                      --NAV--
+      ==========================================================================
+*/
+
+
+@include Standard.all;
+
+
+nav:hover .dropdown-menu {
+  display: flex;
+}
+
+nav h1 {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-container img {
+  width: 100px;
+  border-radius: 50%;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+  
+}
+
+/*
+      ==========================================================================
+                                    --HEADER--
+      ==========================================================================
+*/
+
+header {
+  position: relative;
+  text-align: center;
+  padding: 50px;
+  height: 55vw;
+}
+
+.over-mij {
+  max-height: 800px;
+  max-width: 80%;
+  height: auto;
+  position: relative;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: teal;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 1.5em;
+}
+
+/*
+      ==========================================================================
+                          --MAIN,PROJECTS,contact,EXTRA--
+      ==========================================================================
+*/
+
+main {
+  display: flex;
+  flex-direction: column; 
+  align-items: stretch;   
+  gap: 550px;              
+  width: 100%;
+  padding: 20px;
+}
+
+.contact, .projecten, .extra {
+  width: 100%;            
+  margin: 0 auto;
+  text-align: left;
+  
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  width: 100%;
+  margin-top: 50px;
+  scroll-margin-top: 300px;
+  border-radius: 10px;
+  background-color: rgba(0,128,128,0.6);
+}
+
+.projecten {
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  width: 100%;
+  margin-top: 50px;
+  scroll-margin-top: 300px;
+  border-radius: 10px;
+  background-color: rgba(0,128,128,0.6);
+}
+.projects a {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 45%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.projects a:not(:last-child) {
+  border-bottom: 3px solid black;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+}
+.project-file {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background: #f0f0f0;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  color: #222;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.projects, .contact, .extra {
+  
+  width: 1500px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  scroll-margin-top: 200px;
+}
+
+
+
+.extra {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  width: 100%;
+  margin-top: 50px;
+  scroll-margin-top: 100px;
+  border-radius: 10px;
+  background-color: rgba(0,128,128,0.6);
+  max-width: 1500px;
+  height: auto;
+  text-align: center;
+}
+
+
+/*
+      ==========================================================================
+                                    --DROPDOWN--
+      ==========================================================================
+*/
+
+.dropdown-toggle {
+  display: none;
+  cursor: pointer;
+  background: lightgray;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: black;
+}
+
+.dropdown-menu {
+  display: none; 
+  flex-direction: column;
+  position: absolute;
+  right: 15px;
+  top: 100%;
+  background: teal;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: white;
+  padding: 8px;
+  display: block;
+}
+
+/*
+      ==========================================================================
+                                    --MEDIAQUERY--
+      ==========================================================================
+*/
+
+@media (max-width: 900px) {
+
+/*
+      ==========================================================================
+                                    --NAV--
+      ==========================================================================
+*/
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+  }
+  nav ul {
+    display: none;
+    flex-direction: row;
+    gap: 10px;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: teal;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10;
+    width: 100%;
+    left: 0;
+  }
+  nav ul.show {
+    display: flex;
+  }
+  .dropdown-toggle {
+    display: flex;
+    margin-left: auto;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: lightgray;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+  }
+  .profile-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: right;
+    gap: 10px;
+  }
+  .profile-container img {
+    width: 80px;
+  }
+
+/*
+      ==========================================================================
+                                    --MAIN--
+      ==========================================================================
+*/
+
+  header {
+    height: auto;
+    padding: 20px;
+  }
+  .over-mij {
+    max-height: 50%;
+    max-width: 90%;
+    font-size: 1.2em;
+    padding: 15px;
+    margin-top: 175px;
+    margin-bottom: 150px;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 450px;
+    
+  }
+  .contact {
+    font-size: 1.2em;
+    width: 100%;
+    scroll-margin-top: 100px;
+  }
+  .projecten {
+    text-align: center;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    width: 40%;
+  }
+  .projects {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    margin-left: 10px;
+    scroll-margin-top: 100px;
+    display: flex;
+  }
+  .projects img {
+    width: 90%;
+    height: auto;
+  }
+
+    .projecten, .contact {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+/*
+      ==========================================================================
+                                    --FOOTER--
+      ==========================================================================
+*/
+
+  footer {
+    font-size: 1em;
+    padding: 10px;
+  }
+
+}
