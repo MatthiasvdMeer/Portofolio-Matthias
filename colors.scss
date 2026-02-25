@@ -1,0 +1,8 @@
+@mixin nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: teal;
+        padding: 15px;
+        position: relative; /* Ensure dropdown is positioned relative to nav */
+}

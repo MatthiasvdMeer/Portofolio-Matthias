@@ -1,0 +1,400 @@
+@use 'colors.scss';
+
+
+nav {
+@include colors.nav;
+}
+
+
+
+/*
+      ==========================================================================
+                                  --MAIN CSS--
+      ==========================================================================
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 25px;
+ 
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url(https://images.pexels.com/photos/4017166/pexels-photo-4017166.jpeg?cs=srgb&dl=pexels-jenny-uhling-2262740-4017166.jpg&fm=jpg);
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center;
+}
+
+/*
+      ==========================================================================
+                                      --NAV--
+      ==========================================================================
+*/
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: teal;
+  padding: 15px;
+  position: relative; /* Ensure dropdown is positioned relative to nav */
+}
+
+nav:hover .dropdown-menu {
+  display: flex;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+  margin: 0; /* Prevent margin issues */
+}
+
+nav ul li a {
+  text-decoration: none;
+  background: lightgray;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: black;
+}
+
+nav a {
+  margin-right: 50px;
+}
+
+nav span {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-container img {
+  width: 100px;
+  border-radius: 50%;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+  
+}
+
+/*
+      ==========================================================================
+                                    --HEADER--
+      ==========================================================================
+*/
+
+header {
+  position: relative;
+  text-align: center;
+  padding: 50px;
+  height: 55vw;
+}
+
+.over-mij {
+  max-width: 50%;
+  height: auto;
+  position: relative;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: teal;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 1.5em;
+}
+
+/*
+      ==========================================================================
+                          --MAIN,PROJECTS,contact,EXTRA--
+      ==========================================================================
+*/
+
+main {
+  display: flex;
+  flex-direction: column; /* Zet de onderdelen onder elkaar */
+  align-items: stretch;   /* Laat ze de volledige breedte nemen */
+  gap: 550px;              /* Ruimte tussen de onderdelen */
+  width: 100%;
+  padding: 20px;
+}
+
+.contact, .extra, .projecten {
+  width: 100%;            /* Volledige breedte */
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact {
+  font-size: 1.5em;
+  background: transparent;
+  color: black;
+  text-align: left;
+  scroll-margin-top: 350px;
+}
+
+.projecten {
+  font-size: 1.5em;
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  scroll-margin-top: 300px;
+
+}
+.projects a img{
+  width: 100%;
+  height: auto;
+  background: black;
+  border-radius: 5px;
+}
+.projects a {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 20%;
+}
+
+.projects img {
+  width: 20%;
+  height: auto;
+  background: black;
+  border-radius: 5px;
+}
+
+.extra {
+  width: 100%;
+  background: transparent;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  font-size: 1.5em;
+  margin-bottom: 60px;
+  scroll-margin-top: 350px;
+}
+
+/*
+      ==========================================================================
+                                    --FOOTER--
+      ==========================================================================
+*/
+
+footer {
+  text-align: center;
+  background: teal;
+  color: white;
+  padding: 15px;
+  font-size: 1.2em;
+  margin-top: 350px;
+}
+
+footer a {
+  text-decoration: none;
+  background: lightgray;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: black;
+}
+
+/*
+      ==========================================================================
+                                    --DROPDOWN--
+      ==========================================================================
+*/
+
+.dropdown-toggle {
+  display: none;
+  cursor: pointer;
+  background: lightgray;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: black;
+}
+
+.dropdown-menu {
+  display: none; /* Hide dropdown menu by default */
+  flex-direction: column;
+  position: absolute;
+  right: 15px;
+  top: 100%;
+  background: teal;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: white;
+  padding: 8px;
+  display: block;
+}
+
+
+
+
+
+/*
+      ==========================================================================
+                                    --MEDIAQUERY--
+      ==========================================================================
+*/
+
+
+
+
+
+/* Media query for screens smaller than 768px (phones and small tablets) */
+@media (max-width: 900px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    display: none; /* Initially hide the dropdown */
+  }
+  nav ul.show {
+    display: flex; /* Show dropdown when active */
+    flex-direction: column;
+    position: absolute; /* Ensure dropdown doesn't affect navbar layout */
+    right: 15px; /* Align with dropdown toggle */
+    top: 100%; /* Position below the toggle */
+    background: teal;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10; /* Ensure dropdown is above other elements */
+  }
+  .dropdown-menu {
+    display: block; /* Enable dropdown menu for smaller screens */
+    flex-direction: column;
+  }
+  .dropdown-toggle {
+    display: flex;
+    cursor: pointer;
+    background: lightgray;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+    margin-left: auto; /* Push dropdown to the right */
+    position: absolute; /* Position dropdown independently */
+    right: 15px; /* Align with nav padding */
+    top: 50%; /* Center vertically */
+  }
+  .dropdown-toggle.active {
+    background: darkgray; /* Highlight when active */
+    text-align: center;
+    align-items: center;
+    display: flex;
+  }
+  .profile-container {
+    display: flex;
+    flex-direction: row;      // Naam naast foto
+    align-items: center;      // Verticaal uitlijnen
+    text-align: right;
+    gap: 10px;                // Ruimte tussen foto en naam
+  }
+  .profile-container img {
+    width: 80px;
+  }
+}
+
+  header {
+    height: auto;
+    padding: 20px;
+  }
+  .over-mij {
+    max-width: 90%;
+    font-size: 1.2em;
+    padding: 15px;
+    margin-top: 60px; /* Add margin to prevent overlap with navbar */
+    margin-bottom: 150px;
+  }
+  main {
+    display: flex; /* Gebruik flexbox */
+    flex-direction: column; /* Zet de items onder elkaar */
+    align-items: center; /* Centreer de items horizontaal */
+    gap: 450px; /* Voeg ruimte tussen de items toe */
+  }
+  .contact {
+    font-size: 1.2em;
+    width: 100%;
+    scroll-margin-top: 350px;
+    scroll-margin-top: 100px;
+    
+  }
+  .projecten {
+    text-align: center;
+    background-color: teal;
+    color: white;
+    border-radius: 10px;
+    width: 40%;
+    
+
+  }
+  .projects {
+    flex-direction: column; /* Zorg dat de items onder elkaar staan */
+    align-items: center;
+    gap: 15px;
+    width: 100%; /* Gebruik de volledige breedte */
+    margin-left: 10px;
+    scroll-margin-top: 100px;
+  }
+  .projects img {
+    width: 90%; /* Zorg dat de afbeeldingen responsief zijn */
+    height: auto; /* Behoud de aspectratio */
+  }
+
+.extra {
+  font-size: 1.2em;
+  width: 90%;
+  scroll-margin-top: 100px;
+  
+  
+}
+
+footer {
+  font-size: 1em;
+  padding: 10px;
+}
+
+.projecten, .extra, .contact {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */
